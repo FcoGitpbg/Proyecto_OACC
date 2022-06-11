@@ -5,7 +5,7 @@ function conectar()
     $host="localhost";
     $user="root";
     $password="";
-    $dataBase="proyecto";
+    $dataBase="empleados";
 
     $con = mysqli_connect($host,$user,$password,$dataBase);
 
