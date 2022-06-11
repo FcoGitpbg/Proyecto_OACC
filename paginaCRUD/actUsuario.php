@@ -5,7 +5,7 @@
 
     $id = $_GET['sus'];
 
-    $sql = "SELECT * FROM usuarios WHERE id_usuario = '$id' ";
+    $sql = "SELECT * FROM clientes WHERE id_cliente = '$id' ";
     $query = mysqli_query($con, $sql);
 
     $val = mysqli_fetch_array($query);
@@ -25,19 +25,19 @@
 </head>
 <body>
     <div class="container">
-        <form action="actualizar.php?sus=<?php echo $val['id_usuario']?>" method="POST">
+        <form action="actualizar.php?sus=<?php echo $val['id_cliente']?>" method="POST">
             <div class="font-weight-bold font-italic" style="text-align:center;">Editar Usuario</div>
             <br>
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $val['nombre'] ?>">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $val['apellidos'] ?>">
-                <label for="correo">Correo</label>
-                <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $val['correo'] ?>">
+                <label for="apellidos">Estado Suscripción</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $val['estadoSuscripción'] ?>">
+                <label for="correo">Cliente Frecuente</label>
+                <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $val['clienteFrecuente'] ?>">
             </div>
             <div style="text-align:center">
-            <button type="submit" class="btn btn-success">Editar Usuario</button>
+            <button type="submit" class="btn btn-success">Editar Cliente</button>
             </div>
         </form>
     </div>
